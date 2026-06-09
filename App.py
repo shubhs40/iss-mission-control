@@ -2,7 +2,6 @@ import requests
 import streamlit as st
 import folium
 import plotly.graph_objects as go
-import reverse_geocoder as rg
 from datetime import datetime
 from streamlit_folium import st_folium
 
@@ -108,10 +107,9 @@ except:
     next_pass_text = "Unavailable"
     next_pass_duration = "Unknown"
 
-location = rg.search((latitude, longitude))[0]
-place_name = location["name"]
-region = location["admin1"]
-country_code = location["cc"]
+place_name = "Live ISS Position"
+region = "Earth Orbit"
+country_code = "ISS"
 
 st.session_state.trail.append([latitude, longitude])
 
